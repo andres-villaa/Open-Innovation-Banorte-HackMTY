@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Slider } from "@/components/ui/slider"
-import { Line, LineChart, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Legend } from "recharts"
+import { Line, LineChart, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Legend, Tooltip } from "recharts"
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
 import { TrendingUp, TrendingDown, DollarSign, Loader2, Sparkles } from "lucide-react"
 
@@ -216,40 +216,21 @@ export function FinancialSimulator() {
               <CardDescription>Revenue, Cost, and Profit trends</CardDescription>
             </CardHeader>
             <CardContent>
-              <ChartContainer
-                config={{
-                  revenue: {
-                    label: "Revenue",
-                    color: "hsl(var(--chart-1))",
-                  },
-                  cost: {
-                    label: "Cost",
-                    color: "hsl(var(--chart-2))",
-                  },
-                  profit: {
-                    label: "Profit",
-                    color: "hsl(var(--chart-3))",
-                  },
-                }}
-                className="h-[350px]"
-              >
-                <ResponsiveContainer width="100%" height="100%">
-                  <LineChart data={projectionData} margin={{ top: 5, right: 10, left: 10, bottom: 5 }}>
-                    <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
-                    <XAxis dataKey="month" className="text-xs" tick={{ fontSize: 11 }} />
-                    <YAxis
-                      className="text-xs"
-                      tick={{ fontSize: 11 }}
-                      tickFormatter={(value) => `$${(value / 1000).toFixed(0)}k`}
-                    />
-                    <ChartTooltip content={<ChartTooltipContent />} />
-                    <Legend />
-                    <Line type="monotone" dataKey="revenue" stroke="var(--color-revenue)" strokeWidth={2} dot={false} />
-                    <Line type="monotone" dataKey="cost" stroke="var(--color-cost)" strokeWidth={2} dot={false} />
-                    <Line type="monotone" dataKey="profit" stroke="var(--color-profit)" strokeWidth={2} dot={false} />
-                  </LineChart>
-                </ResponsiveContainer>
-              </ChartContainer>
+              <ResponsiveContainer width="100%" height={320}>
+                <LineChart data={projectionData} margin={{ top: 5, right: 10, left: 10, bottom: 5 }}>
+                  <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
+                  <XAxis dataKey="month" className="text-xs" />
+                  <YAxis
+                    className="text-xs"
+                    tickFormatter={(value) => `$${(value / 1e9).toFixed(1)}B`} // Formato en billones
+                  />
+                  <Tooltip formatter={(value: number) => `$${Number(value).toLocaleString()}`} />
+                  <Legend />
+                  <Line type="monotone" dataKey="revenue" name="Revenue" stroke="#3b82f6" strokeWidth={2} dot={false} />
+                  <Line type="monotone" dataKey="cost" name="Cost" stroke="#ef4444" strokeWidth={2} dot={false} />
+                  <Line type="monotone" dataKey="profit" name="Profit" stroke="#22c55e" strokeWidth={2} dot={false} />
+                </LineChart>
+              </ResponsiveContainer>
             </CardContent>
           </Card>
 
