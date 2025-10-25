@@ -1,0 +1,713 @@
+{
+  "headerInfo": {
+    "title": "Dashboard Financiero",
+    "subtitle": "Análisis de registros financieros"
+  },
+  "dateRangeInfo": {
+    "startDate": "2023-01-01",
+    "endDate": "2025-10-01",
+    "totalMonths": 34,
+    "totalRecords": 1000000,
+    "format": "YYYY-MM-DD"
+  },
+  "navigationItems": [
+    {
+      "name": "Dashboard",
+      "id": "dashboard",
+      "icon": "LayoutDashboard"
+    },
+    {
+      "name": "Analytics",
+      "id": "analytics",
+      "icon": "BarChart3"
+    },
+    {
+      "name": "Customers",
+      "id": "customers",
+      "icon": "Users"
+    },
+    {
+      "name": "Products",
+      "id": "products",
+      "icon": "ShoppingCart"
+    },
+    {
+      "name": "Sales",
+      "id": "sales",
+      "icon": "TrendingUp"
+    },
+    {
+      "name": "Reports",
+      "id": "reports",
+      "icon": "FileText"
+    },
+    {
+      "name": "Messages",
+      "id": "messages",
+      "icon": "MessageSquare"
+    },
+    {
+      "name": "Settings",
+      "id": "settings",
+      "icon": "Settings"
+    }
+  ],
+  "metrics": [
+    {
+      "title": "Ingresos Totales",
+      "value": "$131,311,333,929.89",
+      "change": "-96.5%",
+      "trend": "down",
+      "icon": "DollarSign"
+    },
+    {
+      "title": "Gastos Totales",
+      "value": "$64,041,255,459.67",
+      "change": "costos",
+      "trend": "neutral",
+      "icon": "CreditCard"
+    },
+    {
+      "title": "Beneficio Neto",
+      "value": "$67,270,078,470.22",
+      "change": "51.2% margen",
+      "trend": "up",
+      "icon": "TrendingUp"
+    },
+    {
+      "title": "Margen de Beneficio",
+      "value": "51.23%",
+      "change": "Ratio: 1.05x",
+      "trend": "up",
+      "icon": "Percent"
+    }
+  ],
+  "revenueData": [
+    {
+      "month": "Ene",
+      "revenue": 4174393713.26,
+      "expenses": 1977877066.79
+    },
+    {
+      "month": "Feb",
+      "revenue": 3695604535.22,
+      "expenses": 1792815473.97
+    },
+    {
+      "month": "Mar",
+      "revenue": 3997586319.58,
+      "expenses": 1964880219.05
+    },
+    {
+      "month": "Abr",
+      "revenue": 4012865021.04,
+      "expenses": 1906771628.19
+    },
+    {
+      "month": "May",
+      "revenue": 4084768442.03,
+      "expenses": 1977398472.96
+    },
+    {
+      "month": "Jun",
+      "revenue": 3938918620.55,
+      "expenses": 1921194728.61
+    },
+    {
+      "month": "Jul",
+      "revenue": 4079519458.22,
+      "expenses": 1983362758.89
+    },
+    {
+      "month": "Ago",
+      "revenue": 3992698488.3,
+      "expenses": 1963749179.45
+    },
+    {
+      "month": "Sep",
+      "revenue": 3910900726.85,
+      "expenses": 1937165726.73
+    },
+    {
+      "month": "Oct",
+      "revenue": 4079471193.61,
+      "expenses": 2014908059.19
+    },
+    {
+      "month": "Nov",
+      "revenue": 3844635155.42,
+      "expenses": 1924144142.0
+    },
+    {
+      "month": "Dic",
+      "revenue": 4015257074.09,
+      "expenses": 1957324182.91
+    },
+    {
+      "month": "Ene",
+      "revenue": 4043970529.04,
+      "expenses": 1993507886.41
+    },
+    {
+      "month": "Feb",
+      "revenue": 3764179928.19,
+      "expenses": 1826297072.27
+    },
+    {
+      "month": "Mar",
+      "revenue": 3988892520.62,
+      "expenses": 1968167450.63
+    },
+    {
+      "month": "Abr",
+      "revenue": 3945330543.95,
+      "expenses": 1928907799.98
+    },
+    {
+      "month": "May",
+      "revenue": 4021032269.8,
+      "expenses": 1984727621.88
+    },
+    {
+      "month": "Jun",
+      "revenue": 3976467465.59,
+      "expenses": 1877168380.49
+    },
+    {
+      "month": "Jul",
+      "revenue": 4058405793.45,
+      "expenses": 1974246287.24
+    },
+    {
+      "month": "Ago",
+      "revenue": 4003450739.29,
+      "expenses": 1987546328.28
+    },
+    {
+      "month": "Sep",
+      "revenue": 3953021337.48,
+      "expenses": 1919301233.63
+    },
+    {
+      "month": "Oct",
+      "revenue": 4048444678.78,
+      "expenses": 1967285976.78
+    },
+    {
+      "month": "Nov",
+      "revenue": 3986403271.13,
+      "expenses": 1923562479.28
+    },
+    {
+      "month": "Dic",
+      "revenue": 4014608599.42,
+      "expenses": 1984825016.81
+    },
+    {
+      "month": "Ene",
+      "revenue": 4055001834.17,
+      "expenses": 1963858989.13
+    },
+    {
+      "month": "Feb",
+      "revenue": 3740049630.45,
+      "expenses": 1774191276.76
+    },
+    {
+      "month": "Mar",
+      "revenue": 4014699757.08,
+      "expenses": 1959745157.88
+    },
+    {
+      "month": "Abr",
+      "revenue": 3872085969.9,
+      "expenses": 1895127262.36
+    },
+    {
+      "month": "May",
+      "revenue": 3970374599.54,
+      "expenses": 1941790352.93
+    },
+    {
+      "month": "Jun",
+      "revenue": 3928371306.0,
+      "expenses": 1903359144.46
+    },
+    {
+      "month": "Jul",
+      "revenue": 4037728894.48,
+      "expenses": 1978100973.17
+    },
+    {
+      "month": "Ago",
+      "revenue": 4029466560.98,
+      "expenses": 1979557539.47
+    },
+    {
+      "month": "Sep",
+      "revenue": 3895820547.36,
+      "expenses": 1921489327.15
+    },
+    {
+      "month": "Oct",
+      "revenue": 136908405.02,
+      "expenses": 66900263.94
+    }
+  ],
+  "monthlyBreakdown": [
+    {
+      "month": "Ene",
+      "year": 2023,
+      "month_number": 1,
+      "date_start": "2023-01-01",
+      "date_end": "2023-01-31",
+      "revenue": 4174393713.26,
+      "expenses": 1977877066.79,
+      "profit": 2196516646.47,
+      "profit_margin": 52.62
+    },
+    {
+      "month": "Feb",
+      "year": 2023,
+      "month_number": 2,
+      "date_start": "2023-02-01",
+      "date_end": "2023-02-28",
+      "revenue": 3695604535.22,
+      "expenses": 1792815473.97,
+      "profit": 1902789061.25,
+      "profit_margin": 51.49
+    },
+    {
+      "month": "Mar",
+      "year": 2023,
+      "month_number": 3,
+      "date_start": "2023-03-01",
+      "date_end": "2023-03-31",
+      "revenue": 3997586319.58,
+      "expenses": 1964880219.05,
+      "profit": 2032706100.53,
+      "profit_margin": 50.85
+    },
+    {
+      "month": "Abr",
+      "year": 2023,
+      "month_number": 4,
+      "date_start": "2023-04-01",
+      "date_end": "2023-04-30",
+      "revenue": 4012865021.04,
+      "expenses": 1906771628.19,
+      "profit": 2106093392.85,
+      "profit_margin": 52.48
+    },
+    {
+      "month": "May",
+      "year": 2023,
+      "month_number": 5,
+      "date_start": "2023-05-01",
+      "date_end": "2023-05-31",
+      "revenue": 4084768442.03,
+      "expenses": 1977398472.96,
+      "profit": 2107369969.07,
+      "profit_margin": 51.59
+    },
+    {
+      "month": "Jun",
+      "year": 2023,
+      "month_number": 6,
+      "date_start": "2023-06-01",
+      "date_end": "2023-06-30",
+      "revenue": 3938918620.55,
+      "expenses": 1921194728.61,
+      "profit": 2017723891.94,
+      "profit_margin": 51.23
+    },
+    {
+      "month": "Jul",
+      "year": 2023,
+      "month_number": 7,
+      "date_start": "2023-07-01",
+      "date_end": "2023-07-31",
+      "revenue": 4079519458.22,
+      "expenses": 1983362758.89,
+      "profit": 2096156699.33,
+      "profit_margin": 51.38
+    },
+    {
+      "month": "Ago",
+      "year": 2023,
+      "month_number": 8,
+      "date_start": "2023-08-01",
+      "date_end": "2023-08-31",
+      "revenue": 3992698488.3,
+      "expenses": 1963749179.45,
+      "profit": 2028949308.85,
+      "profit_margin": 50.82
+    },
+    {
+      "month": "Sep",
+      "year": 2023,
+      "month_number": 9,
+      "date_start": "2023-09-01",
+      "date_end": "2023-09-30",
+      "revenue": 3910900726.85,
+      "expenses": 1937165726.73,
+      "profit": 1973735000.12,
+      "profit_margin": 50.47
+    },
+    {
+      "month": "Oct",
+      "year": 2023,
+      "month_number": 10,
+      "date_start": "2023-10-01",
+      "date_end": "2023-10-31",
+      "revenue": 4079471193.61,
+      "expenses": 2014908059.19,
+      "profit": 2064563134.42,
+      "profit_margin": 50.61
+    },
+    {
+      "month": "Nov",
+      "year": 2023,
+      "month_number": 11,
+      "date_start": "2023-11-01",
+      "date_end": "2023-11-30",
+      "revenue": 3844635155.42,
+      "expenses": 1924144142.0,
+      "profit": 1920491013.42,
+      "profit_margin": 49.95
+    },
+    {
+      "month": "Dic",
+      "year": 2023,
+      "month_number": 12,
+      "date_start": "2023-12-01",
+      "date_end": "2023-12-31",
+      "revenue": 4015257074.09,
+      "expenses": 1957324182.91,
+      "profit": 2057932891.18,
+      "profit_margin": 51.25
+    },
+    {
+      "month": "Ene",
+      "year": 2024,
+      "month_number": 1,
+      "date_start": "2024-01-01",
+      "date_end": "2024-01-31",
+      "revenue": 4043970529.04,
+      "expenses": 1993507886.41,
+      "profit": 2050462642.63,
+      "profit_margin": 50.7
+    },
+    {
+      "month": "Feb",
+      "year": 2024,
+      "month_number": 2,
+      "date_start": "2024-02-01",
+      "date_end": "2024-02-29",
+      "revenue": 3764179928.19,
+      "expenses": 1826297072.27,
+      "profit": 1937882855.92,
+      "profit_margin": 51.48
+    },
+    {
+      "month": "Mar",
+      "year": 2024,
+      "month_number": 3,
+      "date_start": "2024-03-01",
+      "date_end": "2024-03-31",
+      "revenue": 3988892520.62,
+      "expenses": 1968167450.63,
+      "profit": 2020725069.99,
+      "profit_margin": 50.66
+    },
+    {
+      "month": "Abr",
+      "year": 2024,
+      "month_number": 4,
+      "date_start": "2024-04-01",
+      "date_end": "2024-04-30",
+      "revenue": 3945330543.95,
+      "expenses": 1928907799.98,
+      "profit": 2016422743.97,
+      "profit_margin": 51.11
+    },
+    {
+      "month": "May",
+      "year": 2024,
+      "month_number": 5,
+      "date_start": "2024-05-01",
+      "date_end": "2024-05-31",
+      "revenue": 4021032269.8,
+      "expenses": 1984727621.88,
+      "profit": 2036304647.92,
+      "profit_margin": 50.64
+    },
+    {
+      "month": "Jun",
+      "year": 2024,
+      "month_number": 6,
+      "date_start": "2024-06-01",
+      "date_end": "2024-06-30",
+      "revenue": 3976467465.59,
+      "expenses": 1877168380.49,
+      "profit": 2099299085.1,
+      "profit_margin": 52.79
+    },
+    {
+      "month": "Jul",
+      "year": 2024,
+      "month_number": 7,
+      "date_start": "2024-07-01",
+      "date_end": "2024-07-31",
+      "revenue": 4058405793.45,
+      "expenses": 1974246287.24,
+      "profit": 2084159506.21,
+      "profit_margin": 51.35
+    },
+    {
+      "month": "Ago",
+      "year": 2024,
+      "month_number": 8,
+      "date_start": "2024-08-01",
+      "date_end": "2024-08-31",
+      "revenue": 4003450739.29,
+      "expenses": 1987546328.28,
+      "profit": 2015904411.01,
+      "profit_margin": 50.35
+    },
+    {
+      "month": "Sep",
+      "year": 2024,
+      "month_number": 9,
+      "date_start": "2024-09-01",
+      "date_end": "2024-09-30",
+      "revenue": 3953021337.48,
+      "expenses": 1919301233.63,
+      "profit": 2033720103.85,
+      "profit_margin": 51.45
+    },
+    {
+      "month": "Oct",
+      "year": 2024,
+      "month_number": 10,
+      "date_start": "2024-10-01",
+      "date_end": "2024-10-31",
+      "revenue": 4048444678.78,
+      "expenses": 1967285976.78,
+      "profit": 2081158702.0,
+      "profit_margin": 51.41
+    },
+    {
+      "month": "Nov",
+      "year": 2024,
+      "month_number": 11,
+      "date_start": "2024-11-01",
+      "date_end": "2024-11-30",
+      "revenue": 3986403271.13,
+      "expenses": 1923562479.28,
+      "profit": 2062840791.85,
+      "profit_margin": 51.75
+    },
+    {
+      "month": "Dic",
+      "year": 2024,
+      "month_number": 12,
+      "date_start": "2024-12-01",
+      "date_end": "2024-12-31",
+      "revenue": 4014608599.42,
+      "expenses": 1984825016.81,
+      "profit": 2029783582.61,
+      "profit_margin": 50.56
+    },
+    {
+      "month": "Ene",
+      "year": 2025,
+      "month_number": 1,
+      "date_start": "2025-01-01",
+      "date_end": "2025-01-31",
+      "revenue": 4055001834.17,
+      "expenses": 1963858989.13,
+      "profit": 2091142845.04,
+      "profit_margin": 51.57
+    },
+    {
+      "month": "Feb",
+      "year": 2025,
+      "month_number": 2,
+      "date_start": "2025-02-01",
+      "date_end": "2025-02-28",
+      "revenue": 3740049630.45,
+      "expenses": 1774191276.76,
+      "profit": 1965858353.69,
+      "profit_margin": 52.56
+    },
+    {
+      "month": "Mar",
+      "year": 2025,
+      "month_number": 3,
+      "date_start": "2025-03-01",
+      "date_end": "2025-03-31",
+      "revenue": 4014699757.08,
+      "expenses": 1959745157.88,
+      "profit": 2054954599.2,
+      "profit_margin": 51.19
+    },
+    {
+      "month": "Abr",
+      "year": 2025,
+      "month_number": 4,
+      "date_start": "2025-04-01",
+      "date_end": "2025-04-30",
+      "revenue": 3872085969.9,
+      "expenses": 1895127262.36,
+      "profit": 1976958707.54,
+      "profit_margin": 51.06
+    },
+    {
+      "month": "May",
+      "year": 2025,
+      "month_number": 5,
+      "date_start": "2025-05-01",
+      "date_end": "2025-05-31",
+      "revenue": 3970374599.54,
+      "expenses": 1941790352.93,
+      "profit": 2028584246.61,
+      "profit_margin": 51.09
+    },
+    {
+      "month": "Jun",
+      "year": 2025,
+      "month_number": 6,
+      "date_start": "2025-06-01",
+      "date_end": "2025-06-30",
+      "revenue": 3928371306.0,
+      "expenses": 1903359144.46,
+      "profit": 2025012161.54,
+      "profit_margin": 51.55
+    },
+    {
+      "month": "Jul",
+      "year": 2025,
+      "month_number": 7,
+      "date_start": "2025-07-01",
+      "date_end": "2025-07-31",
+      "revenue": 4037728894.48,
+      "expenses": 1978100973.17,
+      "profit": 2059627921.31,
+      "profit_margin": 51.01
+    },
+    {
+      "month": "Ago",
+      "year": 2025,
+      "month_number": 8,
+      "date_start": "2025-08-01",
+      "date_end": "2025-08-31",
+      "revenue": 4029466560.98,
+      "expenses": 1979557539.47,
+      "profit": 2049909021.51,
+      "profit_margin": 50.87
+    },
+    {
+      "month": "Sep",
+      "year": 2025,
+      "month_number": 9,
+      "date_start": "2025-09-01",
+      "date_end": "2025-09-30",
+      "revenue": 3895820547.36,
+      "expenses": 1921489327.15,
+      "profit": 1974331220.21,
+      "profit_margin": 50.68
+    },
+    {
+      "month": "Oct",
+      "year": 2025,
+      "month_number": 10,
+      "date_start": "2025-10-01",
+      "date_end": "2025-10-31",
+      "revenue": 136908405.02,
+      "expenses": 66900263.94,
+      "profit": 70008141.08,
+      "profit_margin": 51.14
+    }
+  ],
+  "trafficData": [
+    {
+      "day": "Lun",
+      "visits": 14349700
+    },
+    {
+      "day": "Mar",
+      "visits": 14330800
+    },
+    {
+      "day": "Mié",
+      "visits": 14315600
+    },
+    {
+      "day": "Jue",
+      "visits": 14207100
+    },
+    {
+      "day": "Vie",
+      "visits": 14198300
+    },
+    {
+      "day": "Sáb",
+      "visits": 14263200
+    },
+    {
+      "day": "Dom",
+      "visits": 14335300
+    }
+  ],
+  "performanceData": [
+    {
+      "category": "Producto A",
+      "value": 65703551894.05
+    },
+    {
+      "category": "Producto B",
+      "value": 65607782035.84
+    },
+    {
+      "category": "Costos",
+      "value": 19368952183.06
+    },
+    {
+      "category": "Personal",
+      "value": 16296584491.78
+    },
+    {
+      "category": "Infraestructura",
+      "value": 13147104484.39
+    },
+    {
+      "category": "Servicios",
+      "value": 9956087701.8
+    },
+    {
+      "category": "Marketing",
+      "value": 5272526598.64
+    }
+  ],
+  "productSalesPerformance": {
+    "producto_a": {
+      "total": 65703551894.05,
+      "concentration": 50.04
+    },
+    "producto_b": {
+      "total": 65607782035.84,
+      "concentration": 49.96
+    }
+  },
+  "topExpenseCategory": {
+    "category": "costos",
+    "value": 19368952183.06,
+    "percentage": 30.24
+  },
+  "financialBase": {
+    "baseRevenue": 131311333929.89,
+    "baseCost": 64041255459.67,
+    "baseProfit": 67270078470.22
+  }
+}

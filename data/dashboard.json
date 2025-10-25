@@ -1,0 +1,112 @@
+{
+  "headerInfo": {
+    "title": "Dashboard Overview",
+    "subtitle": "Welcome back, John"
+  },
+
+  "navigationItems": [
+    {
+      "name": "Dashboard",
+      "id": "dashboard",
+      "icon": "LayoutDashboard"
+    },
+    {
+      "name": "Analytics",
+      "id": "analytics",
+      "icon": "BarChart3"
+    },
+    {
+      "name": "Customers",
+      "id": "customers",
+      "icon": "Users"
+    },
+    {
+      "name": "Products",
+      "id": "products",
+      "icon": "ShoppingCart"
+    },
+    {
+      "name": "Sales",
+      "id": "sales",
+      "icon": "TrendingUp"
+    },
+    {
+      "name": "Reports",
+      "id": "reports",
+      "icon": "FileText"
+    },
+    {
+      "name": "Messages",
+      "id": "messages",
+      "icon": "MessageSquare"
+    },
+    {
+      "name": "Settings",
+      "id": "settings",
+      "icon": "Settings"
+    }
+  ],
+
+  "metrics": [
+    {
+      "title": "Ingresos Totales",
+      "value": "$45,231.89",
+      "change": "+20.1%",
+      "trend": "up",
+      "icon": "DollarSign"
+    },
+    {
+      "title": "Clientes Activos",
+      "value": "2,350",
+      "change": "+15.3%",
+      "trend": "up",
+      "icon": "Users"
+    },
+    {
+      "title": "Ventas",
+      "value": "1,234",
+      "change": "-4.2%",
+      "trend": "down",
+      "icon": "ShoppingCart"
+    },
+    {
+      "title": "Tasa de Conversión",
+      "value": "3.24%",
+      "change": "+8.7%",
+      "trend": "up",
+      "icon": "TrendingUp"
+    }
+  ],
+
+  "revenueData": [
+    { "month": "Ene", "revenue": 4000, "expenses": 2400 },
+    { "month": "Feb", "revenue": 3000, "expenses": 1398 },
+    { "month": "Mar", "revenue": 5000, "expenses": 2800 },
+    { "month": "Abr", "revenue": 4500, "expenses": 3908 },
+    { "month": "May", "revenue": 6000, "expenses": 4800 },
+    { "month": "Jun", "revenue": 5500, "expenses": 3800 }
+  ],
+
+  "trafficData": [
+    { "day": "Lun", "visits": 2400 },
+    { "day": "Mar", "visits": 1398 },
+    { "day": "Mié", "visits": 9800 },
+    { "day": "Jue", "visits": 3908 },
+    { "day": "Vie", "visits": 4800 },
+    { "day": "Sáb", "visits": 3800 },
+    { "day": "Dom", "visits": 4300 }
+  ],
+
+  "performanceData": [
+    { "category": "Producto A", "value": 4000 },
+    { "category": "Producto B", "value": 3000 },
+    { "category": "Producto C", "value": 2000 },
+    { "category": "Producto D", "value": 2780 },
+    { "category": "Producto E", "value": 1890 }
+  ],
+
+  "financialBase": {
+    "baseRevenue": 100000,
+    "baseCost": 70000
+  }
+}
