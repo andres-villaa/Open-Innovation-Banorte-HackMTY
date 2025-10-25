@@ -13,7 +13,7 @@ const CONVAI_SCRIPT_SRC = "https://unpkg.com/@elevenlabs/convai-widget-embed"
 
 export default function DashboardPage() {
   const [currentSection, setCurrentSection] = useState("dashboard")
-  const [showConvai, setShowConvai] = useState(true)
+  const [showConvai, setShowConvai] = useState(false)
 
   return (
     // Root uses flex so sidebar + main content share viewport height
