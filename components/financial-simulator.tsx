@@ -1,27 +1,5 @@
+import ReactMarkdown from "react-markdown";
 
-"use client"
-// Utility function to strip Markdown formatting from a string
-function stripMarkdown(markdown: string): string {
-  return markdown
-    // Remove bold and italic
-    .replace(/\*\*([^*]+)\*\*/g, '$1')
-    .replace(/\*([^*]+)\*/g, '$1')
-    // Remove headings
-    .replace(/^#+\s?/gm, '')
-    // Remove inline code
-    .replace(/`([^`]+)`/g, '$1')
-    // Remove bullet points and extra whitespace
-    .replace(/^\s*[-*+]\s+/gm, '- ')
-    // Remove remaining Markdown links
-    .replace(/\[([^\]]+)\]\([^\)]+\)/g, '$1')
-    // Remove horizontal rules
-    .replace(/^---$/gm, '')
-    // Remove blockquotes
-    .replace(/^>\s?/gm, '')
-    // Remove extra newlines
-    .replace(/\n{2,}/g, '\n')
-    .trim();
-}
 
 import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -138,7 +116,7 @@ export function FinancialSimulator() {
               role: "user",
               parts: [
                 {
-                  text: `With a ${revenueGrowth}% increase in revenue and ${costIncrease}% higher costs, your projected profit is expected to ${profitChange > 0 ? "grow" : "decline"} by ${Math.abs(profitChange).toFixed(1)}% over the next year.\n\nPlease provide:\n- A summary of the financial outlook.\n- 3 bullet points with dashes and line breaks with actionable recommendations for the business.\n- Keep the response concise and clear for business decision makers.`
+                  text: `With a ${revenueGrowth}% increase in revenue and ${costIncrease}% higher costs, your projected profit is expected to ${profitChange > 0 ? "grow" : "decline"} by ${Math.abs(profitChange).toFixed(1)}% over the next year.\n\nPlease provide:\n- A summary of the financial outlook.\n- 3 bullet points with actionable recommendations for the business, formatted as a Markdown list.\n- IMPORTANT: Add a blank line before the bullet list so it renders correctly in Markdown.\n- Keep the response concise and clear for business decision makers.`
                 }
               ]
             }
@@ -183,10 +161,10 @@ export function FinancialSimulator() {
     console.log("handleGenerateInsight called"); // Depuración para confirmar que la función se ejecuta
 
     try {
-      const insight = await generateInsight();
-      console.log("AI Insight:", insight); // Depuración para verificar el valor de la respuesta
-  setAiInsight(stripMarkdown(insight)); // Guardar la respuesta en el estado, sin Markdown
-      console.log("AI Insight State:", aiInsight); // Depuración para verificar el estado actualizado
+    const insight = await generateInsight();
+    console.log("AI Insight:", insight); // Depuración para verificar el valor de la respuesta
+    setAiInsight(insight); // Guardar la respuesta en el estado, con Markdown
+    console.log("AI Insight State:", aiInsight); // Depuración para verificar el estado actualizado
     } catch (error) {
       setInsightError("Failed to fetch insight. Please try again later.");
     } finally {
@@ -363,7 +341,9 @@ export function FinancialSimulator() {
                 </div>
               </CardHeader>
               <CardContent>
-                <p className="text-sm leading-relaxed">{aiInsight}</p>
+                <div className="text-sm leading-relaxed">
+                  <ReactMarkdown>{aiInsight ?? ""}</ReactMarkdown>
+                </div>
               </CardContent>
             </Card>
           )}
