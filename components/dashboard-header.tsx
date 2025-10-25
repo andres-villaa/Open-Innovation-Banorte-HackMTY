@@ -16,7 +16,7 @@ export function DashboardHeader() {
   const headerInfo = dashboardData.headerInfo || { title: "Dashboard", subtitle: "Welcome" }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60">
+    <header className="sticky top-0 z-50 border-b border-border bg-card/95 backdrop-blur supports-backdrop-filter:bg-card/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 lg:px-8">
         <div>
           <h1 className="text-lg font-semibold leading-none">{headerInfo.title}</h1>

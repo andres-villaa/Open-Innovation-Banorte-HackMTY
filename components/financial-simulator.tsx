@@ -1,4 +1,27 @@
+
 "use client"
+// Utility function to strip Markdown formatting from a string
+function stripMarkdown(markdown: string): string {
+  return markdown
+    // Remove bold and italic
+    .replace(/\*\*([^*]+)\*\*/g, '$1')
+    .replace(/\*([^*]+)\*/g, '$1')
+    // Remove headings
+    .replace(/^#+\s?/gm, '')
+    // Remove inline code
+    .replace(/`([^`]+)`/g, '$1')
+    // Remove bullet points and extra whitespace
+    .replace(/^\s*[-*+]\s+/gm, '- ')
+    // Remove remaining Markdown links
+    .replace(/\[([^\]]+)\]\([^\)]+\)/g, '$1')
+    // Remove horizontal rules
+    .replace(/^---$/gm, '')
+    // Remove blockquotes
+    .replace(/^>\s?/gm, '')
+    // Remove extra newlines
+    .replace(/\n{2,}/g, '\n')
+    .trim();
+}
 
 import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -7,14 +30,40 @@ import { Slider } from "@/components/ui/slider"
 import { Line, LineChart, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Legend, Tooltip } from "recharts"
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
 import { TrendingUp, TrendingDown, DollarSign, Loader2, Sparkles } from "lucide-react"
+import axios from "axios"; // Importar Axios para realizar solicitudes HTTP
 
 import dashboardData from "@/data/dashboard_metrics.json"
+
+// Configuración de la API de Gemini
+const GEMINI_API_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
+const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`;
 
 // Initial base values for the simulation (sourced from dashboard JSON)
 const BASE_REVENUE = dashboardData.financialBase?.baseRevenue ?? 100000
 const BASE_COST = dashboardData.financialBase?.baseCost ?? 70000
 
+// Mover la definición de fetchWithRetry al inicio del archivo para que esté disponible globalmente
+const fetchWithRetry = async (url: string, options: any, retries = 3, delay = 1000): Promise<any> => {
+  for (let i = 0; i < retries; i++) {
+    try {
+      const response = await axios.post(url, options);
+      return response;
+    } catch (error: any) {
+      if (error.response?.status === 429 && i < retries - 1) {
+        await new Promise((resolve) => setTimeout(resolve, delay * (i + 1)));
+      } else if (error.response?.status === 403) {
+        console.error("Authorization error: Check your API key or permissions.");
+        throw new Error("Authorization error: Access denied.");
+      } else {
+        throw error;
+      }
+    }
+  }
+};
+
 export function FinancialSimulator() {
+  // Debug: Print Gemini API key at runtime
+  console.log('Gemini API Key:', process.env.NEXT_PUBLIC_GEMINI_API_KEY);
   // State for slider values
   const [revenueGrowth, setRevenueGrowth] = useState(10)
   const [costIncrease, setCostIncrease] = useState(5)
@@ -23,6 +72,11 @@ export function FinancialSimulator() {
   // State for simulation
   const [isSimulating, setIsSimulating] = useState(false)
   const [hasSimulated, setHasSimulated] = useState(false)
+
+  // State for AI insight
+  const [isFetchingInsight, setIsFetchingInsight] = useState(false);
+  const [insightError, setInsightError] = useState<string | null>(null);
+  const [aiInsight, setAiInsight] = useState<string | null>(null); // Estado para almacenar la respuesta de Gemini
 
   // Calculate projected values based on slider inputs
   const calculateProjections = () => {
@@ -58,22 +112,87 @@ export function FinancialSimulator() {
   const profitChange = ((projectedProfit - currentProfit) / currentProfit) * 100
 
   // Run simulation with loading animation
-  const handleRunSimulation = () => {
+  const handleRunSimulation = async () => {
     setIsSimulating(true)
-    // Simulate processing time
-    setTimeout(() => {
+    setHasSimulated(false)
+    setAiInsight(null); // Reiniciar el estado del insight
+
+    // Simular tiempo de procesamiento
+    setTimeout(async () => {
       setIsSimulating(false)
       setHasSimulated(true)
+
+      // Generar el insight después de la simulación
+      await handleGenerateInsight();
     }, 1500)
   }
 
   // Generate AI insight based on the scenario
-  const generateInsight = () => {
-    const profitDirection = profitChange > 0 ? "grow" : "decline"
-    const profitEmoji = profitChange > 0 ? "📈" : "📉"
+  const generateInsight = async () => {
+    try {
+      const response = await fetchWithRetry(
+        GEMINI_API_URL,
+        {
+          contents: [
+            {
+              role: "user",
+              parts: [
+                {
+                  text: `With a ${revenueGrowth}% increase in revenue and ${costIncrease}% higher costs, your projected profit is expected to ${profitChange > 0 ? "grow" : "decline"} by ${Math.abs(profitChange).toFixed(1)}% over the next year.\n\nPlease provide:\n- A summary of the financial outlook.\n- 3 bullet points with dashes and line breaks with actionable recommendations for the business.\n- Keep the response concise and clear for business decision makers.`
+                }
+              ]
+            }
+          ]
+        },
+        3, // Número de reintentos
+        1000 // Retraso entre reintentos
+      );
 
-    return `With a ${revenueGrowth}% increase in revenue and ${costIncrease}% higher costs, your projected profit is expected to ${profitDirection} by ${Math.abs(profitChange).toFixed(1)}%. ${profitEmoji}`
-  }
+      // Debug: Log full Gemini API response
+      console.log('Gemini API full response:', response.data);
+      if (
+        !response.data ||
+        !response.data.candidates ||
+        !response.data.candidates[0] ||
+        !response.data.candidates[0].content ||
+        !response.data.candidates[0].content.parts ||
+        !response.data.candidates[0].content.parts[0] ||
+        !response.data.candidates[0].content.parts[0].text
+      ) {
+        // Log the full error object if available
+        if (response.data && response.data.error) {
+          console.error('Gemini API error object:', response.data.error);
+        }
+        throw new Error("Invalid API response structure");
+      }
+
+      return response.data.candidates[0].content.parts[0].text;
+    } catch (error) {
+      // Log the full Axios error object
+      if (error.response) {
+        console.error('Gemini API Axios error response:', error.response.data);
+      }
+      console.error("Error fetching insight from Gemini:", error);
+      return "There was an error generating the insight. Please try again later.";
+    }
+  };
+
+  const handleGenerateInsight = async () => {
+    setIsFetchingInsight(true);
+    setInsightError(null);
+    console.log("handleGenerateInsight called"); // Depuración para confirmar que la función se ejecuta
+
+    try {
+      const insight = await generateInsight();
+      console.log("AI Insight:", insight); // Depuración para verificar el valor de la respuesta
+  setAiInsight(stripMarkdown(insight)); // Guardar la respuesta en el estado, sin Markdown
+      console.log("AI Insight State:", aiInsight); // Depuración para verificar el estado actualizado
+    } catch (error) {
+      setInsightError("Failed to fetch insight. Please try again later.");
+    } finally {
+      setIsFetchingInsight(false);
+    }
+  };
 
   return (
     <div className="space-y-6">
@@ -234,8 +353,8 @@ export function FinancialSimulator() {
             </CardContent>
           </Card>
 
-          {/* AI Insights Card */}
-          {hasSimulated && (
+          {/* AI Insights Card debajo de la gráfica */}
+          {aiInsight && (
             <Card className="border-primary/50 bg-primary/5">
               <CardHeader>
                 <div className="flex items-center gap-2">
@@ -244,7 +363,7 @@ export function FinancialSimulator() {
                 </div>
               </CardHeader>
               <CardContent>
-                <p className="text-sm leading-relaxed">{generateInsight()}</p>
+                <p className="text-sm leading-relaxed">{aiInsight}</p>
               </CardContent>
             </Card>
           )}
@@ -253,3 +372,37 @@ export function FinancialSimulator() {
     </div>
   )
 }
+
+const fetchInsight = async (revenueGrowth: number, costIncrease: number, profitChange: number) => {
+    const generateInsight = async () => {
+      try {
+        const response = await fetchWithRetry(
+          GEMINI_API_URL,
+          {
+            contents: [
+              {
+                parts: [
+                  {
+                    text: `With a ${revenueGrowth}% increase in revenue and ${costIncrease}% higher costs, your projected profit is expected to ${profitChange > 0 ? "grow" : "decline"} by ${Math.abs(profitChange).toFixed(1)}%.`
+                  }
+                ]
+              }
+            ]
+          },
+          3, // Número de reintentos
+          1000 // Retraso entre reintentos
+        );
+
+        if (!response.data || !response.data.contents || !response.data.contents[0] || !response.data.contents[0].parts || !response.data.contents[0].parts[0]) {
+          throw new Error("Invalid API response structure");
+        }
+
+        return response.data.contents[0].parts[0].text;
+      } catch (error) {
+        console.error("Error fetching insight from Gemini:", error);
+        return "There was an error generating the insight. Please try again later.";
+      }
+    };
+
+    return await generateInsight();
+  };
