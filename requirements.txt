@@ -1,0 +1,7 @@
+prophet
+numpy
+pandas
+fastapi
+uvicorn
+joblib
+pydantic
