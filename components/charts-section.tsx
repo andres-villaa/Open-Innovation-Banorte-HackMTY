@@ -109,7 +109,7 @@ export function ChartsSection({ empresaId }: ChartsSectionProps) {
           <ResponsiveContainer width="100%" height={250}>
             <PieChart>
               <Pie
-                data={productPieData}
+                data={Object.entries(empresa?.ventas_por_producto || {}).map(([key, value]) => ({ name: key, value }))}
                 dataKey="value"
                 nameKey="name"
                 cx="50%"
@@ -117,7 +117,7 @@ export function ChartsSection({ empresaId }: ChartsSectionProps) {
                 outerRadius={80}
                 label={({ name, percent }) => `${name}: ${typeof percent === 'number' ? (percent * 100).toFixed(1) : '0.0'}%`}
               >
-                {productPieData.map((entry, idx) => (
+                {Object.entries(empresa?.ventas_por_producto || {}).map((_, idx) => (
                   <Cell key={`cell-${idx}`} fill={pieColors[idx % pieColors.length]} />
                 ))}
               </Pie>
