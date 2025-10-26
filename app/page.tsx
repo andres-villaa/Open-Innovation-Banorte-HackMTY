@@ -41,7 +41,7 @@ export default function DashboardPage() {
           </div>
           {currentSection === "analytics" ? (
             // Analytics section with Financial Simulator
-            <FinancialSimulator />
+  <FinancialSimulator empresaId={empresaId} />
           ) : (
             // Default Dashboard section (assistant removed)
             <div className="h-full grid gap-6">

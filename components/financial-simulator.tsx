@@ -11,6 +11,7 @@ import { TrendingUp, TrendingDown, DollarSign, Loader2, Sparkles } from "lucide-
 import axios from "axios"; // Importar Axios para realizar solicitudes HTTP
 
 import dashboardData from "@/data/dashboard_metrics.json"
+import summaryCompanies from "@/data/summary_companies.json"
 
 // Configuración de la API de Gemini
 const GEMINI_API_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
@@ -39,7 +40,11 @@ const fetchWithRetry = async (url: string, options: any, retries = 3, delay = 10
   }
 };
 
-export function FinancialSimulator() {
+interface FinancialSimulatorProps {
+  empresaId?: string;
+}
+
+export function FinancialSimulator({ empresaId }: FinancialSimulatorProps = {}) {
   // Debug: Print Gemini API key at runtime
   console.log('Gemini API Key:', process.env.NEXT_PUBLIC_GEMINI_API_KEY);
   // State for slider values
@@ -56,6 +61,11 @@ export function FinancialSimulator() {
   const [insightError, setInsightError] = useState<string | null>(null);
   const [aiInsight, setAiInsight] = useState<string | null>(null); // Estado para almacenar la respuesta de Gemini
 
+  // Obtener datos de la empresa seleccionada si existe
+  const empresa = empresaId ? (summaryCompanies as any[]).find(e => e.empresa_id === empresaId) : null;
+  const baseRevenue = empresa && typeof empresa.ingresos === 'number' ? empresa.ingresos : BASE_REVENUE;
+  const baseCost = empresa && typeof empresa.gastos === 'number' ? empresa.gastos : BASE_COST;
+
   // Calculate projected values based on slider inputs
   const calculateProjections = () => {
     const months = []
@@ -67,8 +77,8 @@ export function FinancialSimulator() {
       const monthlyInflation = inflationRate / 100 / 12
 
       // Calculate values for this month
-      const revenue = BASE_REVENUE * (1 + monthlyRevenueGrowth * i)
-      const cost = BASE_COST * (1 + monthlyCostIncrease * i)
+      const revenue = baseRevenue * (1 + monthlyRevenueGrowth * i)
+      const cost = baseCost * (1 + monthlyCostIncrease * i)
       const inflationImpact = revenue * monthlyInflation * i
       const profit = revenue - cost - inflationImpact
 
@@ -85,7 +95,7 @@ export function FinancialSimulator() {
 
   // Get current and projected totals
   const projectionData = calculateProjections()
-  const currentProfit = BASE_REVENUE - BASE_COST
+  const currentProfit = baseRevenue - baseCost
   const projectedProfit = projectionData[11].profit
   const profitChange = ((projectedProfit - currentProfit) / currentProfit) * 100
 
