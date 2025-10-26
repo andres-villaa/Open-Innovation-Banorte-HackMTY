@@ -20,6 +20,7 @@ import {
 } from "recharts"
 
 import dashboardData from "@/data/dashboard_metrics.json"
+import summaryCompanies from "@/data/summary_companies.json"
 
 const revenueData = dashboardData.revenueData || []
 const trafficData = dashboardData.trafficData || []
@@ -42,21 +43,53 @@ const productPieData = [
 
 const pieColors = ["#3b82f6", "#f59e42"]
 
-export function ChartsSection() {
+interface ChartsSectionProps {
+  empresaId: string;
+}
+
+export function ChartsSection({ empresaId }: ChartsSectionProps) {
+
+  // Buscar la empresa seleccionada
+  const empresa = (summaryCompanies as any[]).find(e => e.empresa_id === empresaId);
+
+  let chartData;
+  const monthNames = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
+  if (empresa && empresa.mensual) {
+    // Convertir el objeto mensual a un array y ordenar por fecha ascendente
+    const mensualArr = Object.entries(empresa.mensual)
+      .map(([fecha, valores]: any) => {
+        // fecha: "2023-01" => mes = 1, año = 2023
+        const [anio, mes] = fecha.split("-");
+        const mesIdx = parseInt(mes, 10) - 1;
+        return {
+          month: `${monthNames[mesIdx]} '${anio.slice(2)}`,
+          revenue: valores.ingresos,
+          expenses: valores.gastos,
+          profit: valores.utilidad,
+        };
+      })
+      .sort((a, b) => a.month.localeCompare(b.month));
+    // Tomar los últimos 12 meses
+    chartData = mensualArr.slice(-12);
+  } else {
+    // Usar los datos globales
+    chartData = monthlyBreakdown.slice(-12);
+  }
+
   return (
     <div className="grid gap-6 lg:grid-cols-2">
-      {/* Nueva gráfica: Evolución mensual de ingresos, gastos y utilidad */}
+      {/* Gráfica: Evolución mensual de ingresos, gastos y utilidad */}
       <Card className="lg:col-span-2">
         <CardHeader>
-          <CardTitle>Evolución Mensual: Ingresos, Gastos y Utilidad</CardTitle>
-          <CardDescription>Serie histórica de los últimos 34 meses</CardDescription>
+          <CardTitle>Evolución mensual de ingresos, gastos y utilidad</CardTitle>
+          <CardDescription>Serie de los últimos 12 meses</CardDescription>
         </CardHeader>
         <CardContent>
           <ResponsiveContainer width="100%" height={320}>
-            <LineChart data={monthlyBreakdown} margin={{ top: 5, right: 10, left: 10, bottom: 5 }}>
+            <LineChart data={chartData} margin={{ top: 5, right: 10, left: 10, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
               <XAxis dataKey="month" className="text-xs" />
-              <YAxis className="text-xs" tickFormatter={v => `$${(v/1e9).toFixed(1)}B`} />
+              <YAxis className="text-xs" tickFormatter={v => `$${(v/1e6).toFixed(0)}M`} />
               <Tooltip formatter={v => `$${Number(v).toLocaleString()}`}/>
               <Legend />
               <Line type="monotone" dataKey="revenue" name="Ingresos" stroke="#3b82f6" strokeWidth={2} dot={false} />
@@ -112,7 +145,6 @@ export function ChartsSection() {
         </CardContent>
       </Card>
       
-
     </div>
-  )
+  );
 }

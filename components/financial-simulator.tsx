@@ -147,10 +147,11 @@ export function FinancialSimulator() {
       return response.data.candidates[0].content.parts[0].text;
     } catch (error) {
       // Log the full Axios error object
-      if (error.response) {
-        console.error('Gemini API Axios error response:', error.response.data);
+      const err = error as any;
+      if (err.response) {
+        console.error('Gemini API Axios error response:', err.response.data);
       }
-      console.error("Error fetching insight from Gemini:", error);
+      console.error("Error fetching insight from Gemini:", err);
       return "There was an error generating the insight. Please try again later.";
     }
   };
