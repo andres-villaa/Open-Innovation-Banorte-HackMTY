@@ -68,26 +68,27 @@ export function FinancialSimulator({ empresaId }: FinancialSimulatorProps = {}) 
 
   // Calculate projected values based on slider inputs
   const calculateProjections = () => {
-    const months = []
+    const months = [];
+    const monthNames = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
 
     for (let i = 0; i < 12; i++) {
       // Calculate monthly growth factors
-      const monthlyRevenueGrowth = revenueGrowth / 100 / 12
-      const monthlyCostIncrease = costIncrease / 100 / 12
-      const monthlyInflation = inflationRate / 100 / 12
+      const monthlyRevenueGrowth = revenueGrowth / 100 / 12;
+      const monthlyCostIncrease = costIncrease / 100 / 12;
+      const monthlyInflation = inflationRate / 100 / 12;
 
       // Calculate values for this month
-      const revenue = baseRevenue * (1 + monthlyRevenueGrowth * i)
-      const cost = baseCost * (1 + monthlyCostIncrease * i)
-      const inflationImpact = revenue * monthlyInflation * i
-      const profit = revenue - cost - inflationImpact
+      const revenue = baseRevenue * (1 + monthlyRevenueGrowth * i);
+      const cost = baseCost * (1 + monthlyCostIncrease * i);
+      const inflationImpact = revenue * monthlyInflation * i;
+      const profit = revenue - cost - inflationImpact;
 
       months.push({
-        month: `Month ${i + 1}`,
+        month: monthNames[i],
         revenue: Math.round(revenue),
         cost: Math.round(cost),
         profit: Math.round(profit),
-      })
+      });
     }
 
     return months
@@ -172,10 +173,10 @@ export function FinancialSimulator({ empresaId }: FinancialSimulatorProps = {}) 
     console.log("handleGenerateInsight called"); // Depuración para confirmar que la función se ejecuta
 
     try {
-    const insight = await generateInsight();
-    console.log("AI Insight:", insight); // Depuración para verificar el valor de la respuesta
-    setAiInsight(insight); // Guardar la respuesta en el estado, con Markdown
-    console.log("AI Insight State:", aiInsight); // Depuración para verificar el estado actualizado
+      const insight = await generateInsight();
+      console.log("AI Insight:", insight); // Depuración para verificar el valor de la respuesta
+      setAiInsight(insight); // Guardar la respuesta en el estado, con Markdown
+      console.log("AI Insight State:", aiInsight); // Depuración para verificar el estado actualizado
     } catch (error) {
       setInsightError("Failed to fetch insight. Please try again later.");
     } finally {
@@ -327,12 +328,21 @@ export function FinancialSimulator({ empresaId }: FinancialSimulatorProps = {}) 
               <ResponsiveContainer width="100%" height={320}>
                 <LineChart data={projectionData} margin={{ top: 5, right: 10, left: 10, bottom: 5 }}>
                   <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
-                  <XAxis dataKey="month" className="text-xs" />
+                  <XAxis dataKey="month" className="text-xs" tickFormatter={(month) => {
+                    const monthNames = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
+                    const monthIndex = parseInt(month.split(' ')[1], 10) - 1;
+                    return monthNames[monthIndex] || month;
+                  }} />
                   <YAxis
                     className="text-xs"
                     tickFormatter={(value) => `$${(value / 1e9).toFixed(1)}B`} // Formato en billones
                   />
-                  <Tooltip formatter={(value: number) => `$${Number(value).toLocaleString()}`} />
+                  <Tooltip formatter={(value: number, name: string, props: any) => {
+                    const monthNames = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
+                    const monthIndex = parseInt(props.payload.month.split(' ')[1], 10) - 1;
+                    const formattedMonth = monthNames[monthIndex] || props.payload.month;
+                    return [`$${Number(value).toLocaleString()}`, formattedMonth];
+                  }} />
                   <Legend />
                   <Line type="monotone" dataKey="revenue" name="Ingresos" stroke="#3b82f6" strokeWidth={2} dot={false} />
                   <Line type="monotone" dataKey="cost" name="Costos" stroke="#ef4444" strokeWidth={2} dot={false} />
@@ -365,35 +375,35 @@ export function FinancialSimulator({ empresaId }: FinancialSimulatorProps = {}) 
 }
 
 const fetchInsight = async (revenueGrowth: number, costIncrease: number, profitChange: number) => {
-    const generateInsight = async () => {
-      try {
-        const response = await fetchWithRetry(
-          GEMINI_API_URL,
-          {
-            contents: [
-              {
-                parts: [
-                  {
-                    text: `With a ${revenueGrowth}% increase in revenue and ${costIncrease}% higher costs, your projected profit is expected to ${profitChange > 0 ? "grow" : "decline"} by ${Math.abs(profitChange).toFixed(1)}%.`
-                  }
-                ]
-              }
-            ]
-          },
-          3, // Número de reintentos
-          1000 // Retraso entre reintentos
-        );
+  const generateInsight = async () => {
+    try {
+      const response = await fetchWithRetry(
+        GEMINI_API_URL,
+        {
+          contents: [
+            {
+              parts: [
+                {
+                  text: `With a ${revenueGrowth}% increase in revenue and ${costIncrease}% higher costs, your projected profit is expected to ${profitChange > 0 ? "grow" : "decline"} by ${Math.abs(profitChange).toFixed(1)}%.`
+                }
+              ]
+            }
+          ]
+        },
+        3, // Número de reintentos
+        1000 // Retraso entre reintentos
+      );
 
-        if (!response.data || !response.data.contents || !response.data.contents[0] || !response.data.contents[0].parts || !response.data.contents[0].parts[0]) {
-          throw new Error("Invalid API response structure");
-        }
-
-        return response.data.contents[0].parts[0].text;
-      } catch (error) {
-        console.error("Error fetching insight from Gemini:", error);
-        return "There was an error generating the insight. Please try again later.";
+      if (!response.data || !response.data.contents || !response.data.contents[0] || !response.data.contents[0].parts || !response.data.contents[0].parts[0]) {
+        throw new Error("Invalid API response structure");
       }
-    };
 
-    return await generateInsight();
+      return response.data.contents[0].parts[0].text;
+    } catch (error) {
+      console.error("Error fetching insight from Gemini:", error);
+      return "There was an error generating the insight. Please try again later.";
+    }
   };
+
+  return await generateInsight();
+};
