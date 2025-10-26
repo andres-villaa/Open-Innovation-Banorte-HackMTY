@@ -99,7 +99,7 @@ export function ChartsSection({ empresaId }: ChartsSectionProps) {
           </ResponsiveContainer>
         </CardContent>
       </Card>
-      {/* Nueva gráfica: Concentración de ventas por producto */}
+      {/* Nueva gráfica: Concentración de Ventas */}
       <Card>
         <CardHeader>
           <CardTitle>Concentración de Ventas</CardTitle>
@@ -134,10 +134,10 @@ export function ChartsSection({ empresaId }: ChartsSectionProps) {
         </CardHeader>
         <CardContent>
           <ResponsiveContainer width="100%" height={250}>
-            <BarChart data={performanceData.filter(d => d.category !== "Producto A" && d.category !== "Producto B")}> 
+            <BarChart data={Object.entries(empresa?.gastos_por_categoria || {}).map(([key, value]) => ({ category: key, value }))}>
               <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
               <XAxis dataKey="category" className="text-xs" />
-              <YAxis className="text-xs" tickFormatter={v => `$${(v/1e9).toFixed(1)}B`} />
+              <YAxis className="text-xs" tickFormatter={v => `$${(v/1e6).toFixed(1)}M`} />
               <Tooltip formatter={v => `$${Number(v).toLocaleString()}`}/>
               <Bar dataKey="value" fill="#f59e42" radius={[8, 8, 0, 0]} />
             </BarChart>
