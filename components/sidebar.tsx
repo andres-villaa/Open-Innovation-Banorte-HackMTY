@@ -75,10 +75,10 @@ export function Sidebar({ onNavigate, currentSection, showConvai, onToggleConvai
           {/* Logo */}
           <div className="flex h-16 items-center border-b border-border px-6">
             <div className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-                <LayoutDashboard className="h-5 w-5 text-primary-foreground" />
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg">
+                <img src="https://img.icons8.com/?size=100&id=HLcedHsnUGdr&format=png&color=334da1" alt="CFOlytics Logo" className="h-5 w-5" />
               </div>
-              <span className="text-lg font-semibold">Business AI</span>
+              <span className="text-lg font-semibold">CFOlytics</span>
             </div>
           </div>
 
@@ -128,7 +128,7 @@ export function Sidebar({ onNavigate, currentSection, showConvai, onToggleConvai
             </Button>
 
             {/* User info */}
-            <div className="flex items-center gap-3 rounded-lg bg-accent/50 px-3 py-2.5">
+            {/* <div className="flex items-center gap-3 rounded-lg bg-accent/50 px-3 py-2.5">
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-sm font-semibold text-primary-foreground">
                 JD
               </div>
@@ -136,7 +136,7 @@ export function Sidebar({ onNavigate, currentSection, showConvai, onToggleConvai
                 <p className="truncate text-sm font-medium">John Doe</p>
                 <p className="truncate text-xs text-muted-foreground">john@business.com</p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </aside>
