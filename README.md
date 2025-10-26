@@ -20,7 +20,6 @@ CFOlytics is a proof-of-concept dashboard that leverages artificial intelligence
 ## Architecture
 
 <img width="1476" height="319" alt="image" src="https://github.com/user-attachments/assets/580f6351-3dce-464f-8785-0dd1dbc7fca4" />
-
 ---
 
 ## Tech Stack
