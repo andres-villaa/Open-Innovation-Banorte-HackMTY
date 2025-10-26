@@ -339,10 +339,10 @@ export function FinancialSimulator({ empresaId }: FinancialSimulatorProps = {}) 
                   />
                   <Tooltip formatter={(value: number, name: string, props: any) => {
                     const monthNames = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
-                    const monthIndex = parseInt(props.payload.month.split(' ')[1], 10) - 1;
-                    const formattedMonth = monthNames[monthIndex] || props.payload.month;
-                    return [`$${Number(value).toLocaleString()}`, formattedMonth];
-                  }} />
+                    const monthIndex = props.payload.month ? monthNames.indexOf(props.payload.month) : -1;
+                    const formattedMonth = monthIndex >= 0 ? monthNames[monthIndex] : props.payload.month;
+                    return [`$${Number(value).toLocaleString()}`, name];
+                  }} labelFormatter={(label) => label} />
                   <Legend />
                   <Line type="monotone" dataKey="revenue" name="Ingresos" stroke="#3b82f6" strokeWidth={2} dot={false} />
                   <Line type="monotone" dataKey="cost" name="Costos" stroke="#ef4444" strokeWidth={2} dot={false} />
