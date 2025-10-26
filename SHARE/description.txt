@@ -1,8 +1,0 @@
-- fecha (date)
-- tipo ('ingreso','gasto')
-- concepto ('Consultoria externa', 'Renta oficina', 'Nomina Operativa',
-       'Venta producto A', 'Servicios publicos', 'Venta producto B',
-       'Compra inventario', 'Publicidad online')
-- categoria ('servicios', 'infraestructura', 'personal', 'ventas', 'costos',
-       'marketing')
-- monto (float)
