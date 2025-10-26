@@ -9,8 +9,7 @@ import { Sidebar } from "@/components/sidebar"
 import { FinancialSimulator } from "@/components/financial-simulator"
 import { EmpresaSelect } from "@/components/empresa-select"
 
-const CONVAI_AGENT_ID = "agent_5901k8dz1e4cf1gvd4mg8p58hvgw"
-const CONVAI_SCRIPT_SRC = "https://unpkg.com/@elevenlabs/convai-widget-embed"
+const CONVAI_AGENT_ID = "agent_6101k8fdd4a6eyxv8dgy7887jkns"
 
 export default function DashboardPage() {
   const [currentSection, setCurrentSection] = useState("dashboard")
@@ -34,7 +33,7 @@ export default function DashboardPage() {
 
         {/* Main content fills remaining space and scrolls internally if needed */}
         <main className="container mx-auto px-4 py-6 lg:px-8 flex-1 overflow-auto">
-          {/* Filtro de empresa visible siempre arriba */}
+          {/* Filtro de empresa visible sempre arriba */}
           <div className="mb-6 flex items-center gap-4">
             <span className="font-medium">Empresa:</span>
             <EmpresaSelect selected={empresaId} onChange={setEmpresaId} />
@@ -57,7 +56,7 @@ export default function DashboardPage() {
       {/* Convai Widget - Loads in bottom right by default */}
       {showConvai && (
         <>
-          <Script src={CONVAI_SCRIPT_SRC} strategy="afterInteractive" />
+          <Script src="https://unpkg.com/@elevenlabs/convai-widget-embed" strategy="afterInteractive" />
           {React.createElement("elevenlabs-convai", { "agent-id": CONVAI_AGENT_ID })}
         </>
       )}
