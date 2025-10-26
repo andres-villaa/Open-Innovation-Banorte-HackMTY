@@ -11,9 +11,18 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import dashboardData from "@/data/dashboard_metrics.json"
+import summaryCompanies from "@/data/summary_companies.json"
 
-export function DashboardHeader() {
+interface DashboardHeaderProps {
+  empresaId?: string
+}
+
+export function DashboardHeader({ empresaId }: DashboardHeaderProps = {}) {
   const headerInfo = dashboardData.headerInfo || { title: "Dashboard", subtitle: "Welcome" }
+  let empresa = null;
+  if (empresaId) {
+    empresa = (summaryCompanies as any[]).find(e => e.empresa_id === empresaId);
+  }
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-card/95 backdrop-blur supports-backdrop-filter:bg-card/60">
@@ -21,6 +30,9 @@ export function DashboardHeader() {
         <div>
           <h1 className="text-lg font-semibold leading-none">{headerInfo.title}</h1>
           <p className="text-xs text-muted-foreground">{headerInfo.subtitle}</p>
+          {empresa && (
+            <span className="text-xs text-muted-foreground">{empresa.empresa_id} | {empresa.fecha_inicio} a {empresa.fecha_fin}</span>
+          )}
         </div>
 
         <div className="flex items-center gap-2">

@@ -7,13 +7,15 @@ import { MetricsGrid } from "@/components/metrics-grid"
 import { ChartsSection } from "@/components/charts-section"
 import { Sidebar } from "@/components/sidebar"
 import { FinancialSimulator } from "@/components/financial-simulator"
+import { EmpresaSelect } from "@/components/empresa-select"
 
 const CONVAI_AGENT_ID = "agent_5901k8dz1e4cf1gvd4mg8p58hvgw"
 const CONVAI_SCRIPT_SRC = "https://unpkg.com/@elevenlabs/convai-widget-embed"
 
 export default function DashboardPage() {
   const [currentSection, setCurrentSection] = useState("dashboard")
-  const [showConvai, setShowConvai] = useState(true)
+  const [showConvai, setShowConvai] = useState(false)
+  const [empresaId, setEmpresaId] = useState("E048") // Valor inicial por default
 
   return (
     // Root uses flex so sidebar + main content share viewport height
@@ -32,6 +34,11 @@ export default function DashboardPage() {
 
         {/* Main content fills remaining space and scrolls internally if needed */}
         <main className="container mx-auto px-4 py-6 lg:px-8 flex-1 overflow-auto">
+          {/* Filtro de empresa visible siempre arriba */}
+          <div className="mb-6 flex items-center gap-4">
+            <span className="font-medium">Empresa:</span>
+            <EmpresaSelect selected={empresaId} onChange={setEmpresaId} />
+          </div>
           {currentSection === "analytics" ? (
             // Analytics section with Financial Simulator
             <FinancialSimulator />
@@ -39,8 +46,8 @@ export default function DashboardPage() {
             // Default Dashboard section (assistant removed)
             <div className="h-full grid gap-6">
               <div className="space-y-6">
-                <MetricsGrid />
-                <ChartsSection />
+                <MetricsGrid empresaId={empresaId} />
+                <ChartsSection empresaId={empresaId} />
               </div>
             </div>
           )}
