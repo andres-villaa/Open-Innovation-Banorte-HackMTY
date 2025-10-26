@@ -187,8 +187,8 @@ export function FinancialSimulator({ empresaId }: FinancialSimulatorProps = {}) 
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Financial Simulator</h1>
-        <p className="text-muted-foreground mt-2">Predict future financial outcomes by adjusting key variables</p>
+        <h1 className="text-3xl font-bold tracking-tight">Simulador Financiero</h1>
+        <p className="text-muted-foreground mt-2">Predice resultados financieros futuros ajustando variables clave</p>
       </div>
 
       <div className="grid gap-6 lg:grid-cols-2">
@@ -197,14 +197,14 @@ export function FinancialSimulator({ empresaId }: FinancialSimulatorProps = {}) 
           {/* Controls Card */}
           <Card>
             <CardHeader>
-              <CardTitle>Simulation Controls</CardTitle>
-              <CardDescription>Adjust variables to see projected outcomes</CardDescription>
+              <CardTitle>Controles de Simulación</CardTitle>
+              <CardDescription>Ajusta las variables para ver los resultados proyectados</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               {/* Revenue Growth Slider */}
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <label className="text-sm font-medium">Revenue Growth (%)</label>
+                  <label className="text-sm font-medium">Crecimiento de Ingresos (%)</label>
                   <span className="text-sm font-semibold text-primary">{revenueGrowth}%</span>
                 </div>
                 <Slider
@@ -220,7 +220,7 @@ export function FinancialSimulator({ empresaId }: FinancialSimulatorProps = {}) 
               {/* Operational Cost Increase Slider */}
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <label className="text-sm font-medium">Operational Cost Increase (%)</label>
+                  <label className="text-sm font-medium">Incremento de Costos Operativos (%)</label>
                   <span className="text-sm font-semibold text-orange-600">{costIncrease}%</span>
                 </div>
                 <Slider
@@ -236,7 +236,7 @@ export function FinancialSimulator({ empresaId }: FinancialSimulatorProps = {}) 
               {/* Inflation Rate Slider */}
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <label className="text-sm font-medium">Inflation Rate (%)</label>
+                  <label className="text-sm font-medium">Tasa de Inflación (%)</label>
                   <span className="text-sm font-semibold text-red-600">{inflationRate}%</span>
                 </div>
                 <Slider
@@ -254,12 +254,12 @@ export function FinancialSimulator({ empresaId }: FinancialSimulatorProps = {}) 
                 {isSimulating ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    Running Simulation...
+                    Ejecutando Simulación...
                   </>
                 ) : (
                   <>
                     <Sparkles className="mr-2 h-4 w-4" />
-                    Run Simulation
+                    Ejecutar Simulación
                   </>
                 )}
               </Button>
@@ -269,8 +269,8 @@ export function FinancialSimulator({ empresaId }: FinancialSimulatorProps = {}) 
           {/* Summary Card */}
           <Card>
             <CardHeader>
-              <CardTitle>Financial Summary</CardTitle>
-              <CardDescription>Current vs. Projected Values</CardDescription>
+              <CardTitle>Resumen Financiero</CardTitle>
+              <CardDescription>Valores Actuales vs. Proyectados</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               {/* Current Profit */}
@@ -280,7 +280,7 @@ export function FinancialSimulator({ empresaId }: FinancialSimulatorProps = {}) 
                     <DollarSign className="h-5 w-5 text-blue-600" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground">Current Profit</p>
+                    <p className="text-sm text-white">Utilidad Actual</p>
                     <p className="text-2xl font-bold">${currentProfit.toLocaleString()}</p>
                   </div>
                 </div>
@@ -297,7 +297,7 @@ export function FinancialSimulator({ empresaId }: FinancialSimulatorProps = {}) 
                     )}
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground">Projected Profit (Year End)</p>
+                    <p className="text-sm text-white">Utilidad Proyectada (Fin de Año)</p>
                     <p className="text-2xl font-bold">${projectedProfit.toLocaleString()}</p>
                   </div>
                 </div>
@@ -305,7 +305,7 @@ export function FinancialSimulator({ empresaId }: FinancialSimulatorProps = {}) 
 
               {/* Change Indicator */}
               <div className="rounded-lg border border-border bg-card p-4">
-                <p className="text-sm text-muted-foreground mb-1">Expected Change</p>
+                <p className="text-sm text-muted-foreground mb-1">Cambio Esperado</p>
                 <p className={`text-xl font-bold ${profitChange >= 0 ? "text-green-600" : "text-red-600"}`}>
                   {profitChange >= 0 ? "+" : ""}
                   {profitChange.toFixed(1)}%
@@ -320,8 +320,8 @@ export function FinancialSimulator({ empresaId }: FinancialSimulatorProps = {}) 
           {/* Chart Card */}
           <Card>
             <CardHeader>
-              <CardTitle>12-Month Projection</CardTitle>
-              <CardDescription>Revenue, Cost, and Profit trends</CardDescription>
+              <CardTitle>Proyección a 12 Meses</CardTitle>
+              <CardDescription>Tendencias de Ingresos, Costos y Utilidades</CardDescription>
             </CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={320}>
@@ -334,9 +334,9 @@ export function FinancialSimulator({ empresaId }: FinancialSimulatorProps = {}) 
                   />
                   <Tooltip formatter={(value: number) => `$${Number(value).toLocaleString()}`} />
                   <Legend />
-                  <Line type="monotone" dataKey="revenue" name="Revenue" stroke="#3b82f6" strokeWidth={2} dot={false} />
-                  <Line type="monotone" dataKey="cost" name="Cost" stroke="#ef4444" strokeWidth={2} dot={false} />
-                  <Line type="monotone" dataKey="profit" name="Profit" stroke="#22c55e" strokeWidth={2} dot={false} />
+                  <Line type="monotone" dataKey="revenue" name="Ingresos" stroke="#3b82f6" strokeWidth={2} dot={false} />
+                  <Line type="monotone" dataKey="cost" name="Costos" stroke="#ef4444" strokeWidth={2} dot={false} />
+                  <Line type="monotone" dataKey="profit" name="Utilidades" stroke="#22c55e" strokeWidth={2} dot={false} />
                 </LineChart>
               </ResponsiveContainer>
             </CardContent>
@@ -348,7 +348,7 @@ export function FinancialSimulator({ empresaId }: FinancialSimulatorProps = {}) 
               <CardHeader>
                 <div className="flex items-center gap-2">
                   <Sparkles className="h-5 w-5 text-primary" />
-                  <CardTitle>AI Insights</CardTitle>
+                  <CardTitle>Perspectivas de IA</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>

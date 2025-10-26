@@ -189,6 +189,24 @@
     "ventas_por_producto": {
       "A": 1397260934.8,
       "B": 1354980513.91
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-9.45%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-9.66%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "-9.29%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-11.73%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -381,6 +399,24 @@
     "ventas_por_producto": {
       "A": 1384704107.53,
       "B": 1329735895.27
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-16.07%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-11.2%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "-20.0%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-17.22%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -573,6 +609,24 @@
     "ventas_por_producto": {
       "A": 1306195728.58,
       "B": 1377102334.38
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-8.08%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-20.54%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "5.11%",
+        "trend": "up"
+      },
+      "transacciones": {
+        "change": "-17.78%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -765,6 +819,24 @@
     "ventas_por_producto": {
       "A": 1326887554.88,
       "B": 1354849091.56
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-12.0%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-13.81%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "-10.28%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-9.66%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -957,6 +1029,24 @@
     "ventas_por_producto": {
       "A": 1375428284.85,
       "B": 1305984195.62
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-18.76%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-23.61%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "-14.08%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-16.64%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -1149,6 +1239,24 @@
     "ventas_por_producto": {
       "A": 1329220709.42,
       "B": 1345501421.12
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "5.76%",
+        "trend": "up"
+      },
+      "gastos": {
+        "change": "-16.73%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "31.9%",
+        "trend": "up"
+      },
+      "transacciones": {
+        "change": "-8.58%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -1341,6 +1449,24 @@
     "ventas_por_producto": {
       "A": 1351745702.31,
       "B": 1322342705.42
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-0.7%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "6.9%",
+        "trend": "up"
+      },
+      "utilidad": {
+        "change": "-7.87%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-0.17%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -1533,6 +1659,24 @@
     "ventas_por_producto": {
       "A": 1294736002.54,
       "B": 1374457064.27
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-16.16%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-11.31%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "-19.52%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-14.31%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -1725,6 +1869,24 @@
     "ventas_por_producto": {
       "A": 1329476035.91,
       "B": 1336095112.06
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-3.02%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "0.75%",
+        "trend": "up"
+      },
+      "utilidad": {
+        "change": "-6.54%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-1.63%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -1917,6 +2079,24 @@
     "ventas_por_producto": {
       "A": 1314667077.19,
       "B": 1347466259.02
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-0.91%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "4.75%",
+        "trend": "up"
+      },
+      "utilidad": {
+        "change": "-6.98%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-1.18%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -2109,6 +2289,24 @@
     "ventas_por_producto": {
       "A": 1305449036.55,
       "B": 1352417863.67
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-16.69%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-28.04%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "-4.1%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-20.48%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -2301,6 +2499,24 @@
     "ventas_por_producto": {
       "A": 1332629291.33,
       "B": 1324643498.73
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "6.86%",
+        "trend": "up"
+      },
+      "gastos": {
+        "change": "-1.14%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "14.7%",
+        "trend": "up"
+      },
+      "transacciones": {
+        "change": "-0.48%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -2493,6 +2709,24 @@
     "ventas_por_producto": {
       "A": 1348156171.48,
       "B": 1306524890.09
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-16.38%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-20.6%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "-12.97%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-16.82%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -2685,6 +2919,24 @@
     "ventas_por_producto": {
       "A": 1303891161.32,
       "B": 1350754197.04
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-24.96%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-9.92%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "-38.29%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-13.14%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -2877,6 +3129,24 @@
     "ventas_por_producto": {
       "A": 1338172494.14,
       "B": 1315037707.7
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-9.83%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-11.68%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "-8.05%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-9.15%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -3069,6 +3339,24 @@
     "ventas_por_producto": {
       "A": 1335994117.21,
       "B": 1312400074.28
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-0.85%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "7.9%",
+        "trend": "up"
+      },
+      "utilidad": {
+        "change": "-9.98%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-2.78%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -3261,6 +3549,24 @@
     "ventas_por_producto": {
       "A": 1319178374.88,
       "B": 1328751621.29
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-16.87%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-13.84%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "-19.68%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-10.8%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -3453,6 +3759,24 @@
     "ventas_por_producto": {
       "A": 1326218585.53,
       "B": 1321136345.08
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-18.08%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-20.05%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "-16.38%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-18.04%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -3645,6 +3969,24 @@
     "ventas_por_producto": {
       "A": 1347425807.16,
       "B": 1295813372.69
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "0.21%",
+        "trend": "up"
+      },
+      "gastos": {
+        "change": "-2.66%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "2.55%",
+        "trend": "up"
+      },
+      "transacciones": {
+        "change": "-7.12%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -3837,6 +4179,24 @@
     "ventas_por_producto": {
       "A": 1310008441.9,
       "B": 1324770289.15
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-21.18%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-19.12%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "-22.77%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-19.56%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -4029,6 +4389,24 @@
     "ventas_por_producto": {
       "A": 1308666587.15,
       "B": 1324409676.89
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-8.81%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-11.48%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "-6.75%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-12.3%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -4221,6 +4599,24 @@
     "ventas_por_producto": {
       "A": 1307858170.65,
       "B": 1324178451.01
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-22.04%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "2.09%",
+        "trend": "up"
+      },
+      "utilidad": {
+        "change": "-42.74%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-9.83%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -4413,6 +4809,24 @@
     "ventas_por_producto": {
       "A": 1323069655.79,
       "B": 1308735265.46
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-13.57%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-11.01%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "-15.94%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-4.35%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -4605,6 +5019,24 @@
     "ventas_por_producto": {
       "A": 1336584243.49,
       "B": 1290589000.88
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-12.96%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-16.91%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "-10.14%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-11.13%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -4797,6 +5229,24 @@
     "ventas_por_producto": {
       "A": 1314482795.47,
       "B": 1312282530.36
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-5.41%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-13.73%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "2.96%",
+        "trend": "up"
+      },
+      "transacciones": {
+        "change": "-7.62%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -4989,6 +5439,24 @@
     "ventas_por_producto": {
       "A": 1335835493.57,
       "B": 1289930632.74
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-10.62%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-18.8%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "-2.44%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-17.66%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -5181,6 +5649,24 @@
     "ventas_por_producto": {
       "A": 1297064138.24,
       "B": 1325602831.12
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-12.3%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-12.55%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "-12.07%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-12.87%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -5373,6 +5859,24 @@
     "ventas_por_producto": {
       "A": 1308881645.15,
       "B": 1313768382.37
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-20.9%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "0.03%",
+        "trend": "up"
+      },
+      "utilidad": {
+        "change": "-37.4%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-9.43%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -5565,6 +6069,24 @@
     "ventas_por_producto": {
       "A": 1355767724.37,
       "B": 1264929215.03
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-23.7%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-4.74%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "-36.83%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-8.32%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -5757,6 +6279,24 @@
     "ventas_por_producto": {
       "A": 1338354674.47,
       "B": 1281385336.33
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-3.35%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-4.14%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "-2.6%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-11.77%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -5949,6 +6489,24 @@
     "ventas_por_producto": {
       "A": 1312129434.91,
       "B": 1307497616.12
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "14.42%",
+        "trend": "up"
+      },
+      "gastos": {
+        "change": "-18.07%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "61.59%",
+        "trend": "up"
+      },
+      "transacciones": {
+        "change": "-7.1%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -6141,6 +6699,24 @@
     "ventas_por_producto": {
       "A": 1294974508.85,
       "B": 1317533066.65
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-9.68%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-8.31%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "-10.99%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-10.73%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -6333,6 +6909,24 @@
     "ventas_por_producto": {
       "A": 1338222244.15,
       "B": 1270762220.64
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-4.53%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-4.46%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "-4.58%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-10.58%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -6525,6 +7119,24 @@
     "ventas_por_producto": {
       "A": 1287584816.11,
       "B": 1318901359.04
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-7.54%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-19.47%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "2.38%",
+        "trend": "up"
+      },
+      "transacciones": {
+        "change": "-21.33%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -6717,6 +7329,24 @@
     "ventas_por_producto": {
       "A": 1317757931.5,
       "B": 1285367816.51
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-33.86%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "0.54%",
+        "trend": "up"
+      },
+      "utilidad": {
+        "change": "-58.12%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-1.32%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -6909,6 +7539,24 @@
     "ventas_por_producto": {
       "A": 1306029476.8,
       "B": 1296102513.98
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-12.9%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-12.64%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "-13.18%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-17.0%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -7101,6 +7749,24 @@
     "ventas_por_producto": {
       "A": 1292743850.74,
       "B": 1309285570.8
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-3.5%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-0.54%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "-6.0%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-7.13%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -7293,6 +7959,24 @@
     "ventas_por_producto": {
       "A": 1323251639.95,
       "B": 1274901950.5
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "2.47%",
+        "trend": "up"
+      },
+      "gastos": {
+        "change": "-7.2%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "12.21%",
+        "trend": "up"
+      },
+      "transacciones": {
+        "change": "-14.24%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -7485,6 +8169,24 @@
     "ventas_por_producto": {
       "A": 1267537102.84,
       "B": 1329703976.9
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-9.66%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "14.41%",
+        "trend": "up"
+      },
+      "utilidad": {
+        "change": "-22.3%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "3.89%",
+        "trend": "up"
+      }
     }
   },
   {
@@ -7677,6 +8379,24 @@
     "ventas_por_producto": {
       "A": 1254339667.04,
       "B": 1342187977.29
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-12.02%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "7.23%",
+        "trend": "up"
+      },
+      "utilidad": {
+        "change": "-27.69%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-8.84%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -7869,6 +8589,24 @@
     "ventas_por_producto": {
       "A": 1296157918.44,
       "B": 1298749372.6
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-12.69%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-1.28%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "-23.23%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-7.99%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -8061,6 +8799,24 @@
     "ventas_por_producto": {
       "A": 1316409359.94,
       "B": 1277059126.28
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-19.11%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-8.02%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "-31.22%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-8.47%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -8253,6 +9009,24 @@
     "ventas_por_producto": {
       "A": 1262312931.97,
       "B": 1313303905.28
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-20.98%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-10.33%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "-30.09%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-8.72%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -8445,6 +9219,24 @@
     "ventas_por_producto": {
       "A": 1291345070.52,
       "B": 1276310356.76
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "3.72%",
+        "trend": "up"
+      },
+      "gastos": {
+        "change": "-10.92%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "22.47%",
+        "trend": "up"
+      },
+      "transacciones": {
+        "change": "-8.14%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -8637,6 +9429,24 @@
     "ventas_por_producto": {
       "A": 1248686766.77,
       "B": 1313930118.09
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-3.31%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-8.24%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "2.32%",
+        "trend": "up"
+      },
+      "transacciones": {
+        "change": "-5.46%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -8829,6 +9639,24 @@
     "ventas_por_producto": {
       "A": 1260337441.19,
       "B": 1297737337.47
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-13.34%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-11.33%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "-15.12%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-11.18%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -9021,6 +9849,24 @@
     "ventas_por_producto": {
       "A": 1271082272.42,
       "B": 1286737425.52
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-25.18%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-15.54%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "-33.22%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-12.42%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -9213,6 +10059,24 @@
     "ventas_por_producto": {
       "A": 1288434641.02,
       "B": 1260396932.77
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-22.65%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-16.88%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "-30.14%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-10.72%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -9405,6 +10269,24 @@
     "ventas_por_producto": {
       "A": 1260476290.57,
       "B": 1286661896.08
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-7.32%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-14.19%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "-0.93%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-7.65%",
+        "trend": "down"
+      }
     }
   },
   {
@@ -9597,6 +10479,24 @@
     "ventas_por_producto": {
       "A": 1309727780.46,
       "B": 1228075722.02
+    },
+    "trend_change": {
+      "ingresos": {
+        "change": "-24.66%",
+        "trend": "down"
+      },
+      "gastos": {
+        "change": "-0.01%",
+        "trend": "down"
+      },
+      "utilidad": {
+        "change": "-42.14%",
+        "trend": "down"
+      },
+      "transacciones": {
+        "change": "-11.0%",
+        "trend": "down"
+      }
     }
   }
 ]
