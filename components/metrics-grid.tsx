@@ -22,33 +22,34 @@ export function MetricsGrid({ empresaId }: MetricsGridProps) {
   const empresa = (summaryCompanies as any[]).find(e => e.empresa_id === empresaId)
 
   // Si existe la empresa, usar sus datos, si no, mostrar los valores originales
+  // Calcular métricas detalladas por empresa usando trend_change
   const metrics = [
     {
       title: "Ingresos Totales",
-      value: empresa && typeof empresa.ingresos === 'number' ? `$${empresa.ingresos.toLocaleString(undefined, {maximumFractionDigits:2})}` : dashboardData.metrics[0].value,
-      change: empresa ? undefined : dashboardData.metrics[0].change,
-      trend: empresa ? undefined : dashboardData.metrics[0].trend,
+      value: empresa && typeof empresa.ingresos === 'number' ? `$${empresa.ingresos.toLocaleString(undefined, {maximumFractionDigits:2})}` : "-",
+      change: empresa?.trend_change?.ingresos?.change || "-",
+      trend: empresa?.trend_change?.ingresos?.trend || undefined,
       icon: "DollarSign"
     },
     {
       title: "Gastos Totales",
-      value: empresa && typeof empresa.gastos === 'number' ? `$${empresa.gastos.toLocaleString(undefined, {maximumFractionDigits:2})}` : dashboardData.metrics[1].value,
-      change: empresa ? undefined : dashboardData.metrics[1].change,
-      trend: empresa ? undefined : dashboardData.metrics[1].trend,
+      value: empresa && typeof empresa.gastos === 'number' ? `$${empresa.gastos.toLocaleString(undefined, {maximumFractionDigits:2})}` : "-",
+      change: empresa?.trend_change?.gastos?.change || "-",
+      trend: empresa?.trend_change?.gastos?.trend || undefined,
       icon: "CreditCard"
     },
     {
       title: "Beneficio Neto",
-      value: empresa && typeof empresa.beneficio === 'number' ? `$${empresa.beneficio.toLocaleString(undefined, {maximumFractionDigits:2})}` : (empresa && typeof empresa.utilidad === 'number' ? `$${empresa.utilidad.toLocaleString(undefined, {maximumFractionDigits:2})}` : dashboardData.metrics[2].value),
-      change: empresa ? undefined : dashboardData.metrics[2].change,
-      trend: empresa ? undefined : dashboardData.metrics[2].trend,
+      value: empresa && typeof empresa.utilidad === 'number' ? `$${empresa.utilidad.toLocaleString(undefined, {maximumFractionDigits:2})}` : "-",
+      change: empresa?.trend_change?.utilidad?.change || "-",
+      trend: empresa?.trend_change?.utilidad?.trend || undefined,
       icon: "TrendingUp"
     },
     {
       title: "Transacciones",
       value: empresa && typeof empresa.transacciones === 'number' ? empresa.transacciones.toLocaleString() : "-",
-      change: undefined,
-      trend: undefined,
+      change: empresa?.trend_change?.transacciones?.change || "-",
+      trend: empresa?.trend_change?.transacciones?.trend || undefined,
       icon: "Users"
     }
   ]
